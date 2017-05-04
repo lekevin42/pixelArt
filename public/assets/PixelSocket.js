@@ -14,7 +14,7 @@
     PixelSocket.prototype.connect = function() {
         this.socket = new WebSocket(this.server);
         this.socket.binaryType = 'arraybuffer';
-
+        $(window).trigger('resize');
         this.socket.onmessage = function(event) {
 
             if (event.data.byteLength == CANVAS_WIDTH * CANVAS_HEIGHT) {
